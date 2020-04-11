@@ -406,6 +406,7 @@
   __interceptor_setvbuf;
   __interceptor_shmctl;
   __interceptor_sigaction;
+  __interceptor_sigaltstack;
   __interceptor_sigblock;
   __interceptor_sigemptyset;
   __interceptor_sigfillset;
@@ -474,6 +475,7 @@
   __interceptor_tsearch;
   __interceptor_ttyname;
   __interceptor_ttyname_r;
+  __interceptor_uname;
   __interceptor_unlink;
   __interceptor_usleep;
   __interceptor_valloc;
@@ -863,6 +865,7 @@
   __sanitizer_syscall_post_impl_shmget;
   __sanitizer_syscall_post_impl_shutdown;
   __sanitizer_syscall_post_impl_sigaction;
+  __sanitizer_syscall_post_impl_sigaltstack;
   __sanitizer_syscall_post_impl_signal;
   __sanitizer_syscall_post_impl_signalfd;
   __sanitizer_syscall_post_impl_signalfd4;
@@ -1186,6 +1189,7 @@
   __sanitizer_syscall_pre_impl_shmget;
   __sanitizer_syscall_pre_impl_shutdown;
   __sanitizer_syscall_pre_impl_sigaction;
+  __sanitizer_syscall_pre_impl_sigaltstack;
   __sanitizer_syscall_pre_impl_signal;
   __sanitizer_syscall_pre_impl_signalfd;
   __sanitizer_syscall_pre_impl_signalfd4;
@@ -1268,8 +1272,11 @@
   __tls_get_addr;
   __tsan_acquire;
   __tsan_atomic*;
+  __tsan_create_fiber;
+  __tsan_destroy_fiber;
   __tsan_flush_memory;
   __tsan_func*;
+  __tsan_get_current_fiber;
   __tsan_init;
   __tsan_java*;
   __tsan_mutex_create;
@@ -1284,6 +1291,8 @@
   __tsan_mutex_pre_unlock;
   __tsan_read*;
   __tsan_release;
+  __tsan_set_fiber_name;
+  __tsan_switch_to_fiber;
   __tsan_unaligned*;
   __tsan_vptr*;
   __tsan_write*;
@@ -1640,6 +1649,7 @@
   setvbuf;
   shmctl;
   sigaction;
+  sigaltstack;
   sigblock;
   sigemptyset;
   sigfillset;
@@ -1708,6 +1718,7 @@
   tsearch;
   ttyname;
   ttyname_r;
+  uname;
   unlink;
   usleep;
   valloc;

@@ -82,14 +82,14 @@ set_target_properties(clangAST PROPERTIES
 add_library(clangDynamicASTMatchers STATIC IMPORTED)
 
 set_target_properties(clangDynamicASTMatchers PROPERTIES
-  INTERFACE_LINK_LIBRARIES "clangAST;clangASTMatchers;clangBasic;LLVMSupport"
+  INTERFACE_LINK_LIBRARIES "clangAST;clangASTMatchers;clangBasic;LLVMFrontendOpenMP;LLVMSupport"
 )
 
 # Create imported target clangASTMatchers
 add_library(clangASTMatchers STATIC IMPORTED)
 
 set_target_properties(clangASTMatchers PROPERTIES
-  INTERFACE_LINK_LIBRARIES "clangAST;clangBasic;LLVMSupport"
+  INTERFACE_LINK_LIBRARIES "clangAST;clangBasic;clangLex;LLVMFrontendOpenMP;LLVMSupport"
 )
 
 # Create imported target clangCrossTU
@@ -110,14 +110,14 @@ set_target_properties(clangSema PROPERTIES
 add_library(clangCodeGen STATIC IMPORTED)
 
 set_target_properties(clangCodeGen PROPERTIES
-  INTERFACE_LINK_LIBRARIES "clangAnalysis;clangAST;clangASTMatchers;clangBasic;clangFrontend;clangLex;clangSerialization;LLVMAnalysis;LLVMBitReader;LLVMBitWriter;LLVMCore;LLVMCoroutines;LLVMCoverage;LLVMFrontendOpenMP;LLVMipo;LLVMIRReader;LLVMAggressiveInstCombine;LLVMInstCombine;LLVMInstrumentation;LLVMLTO;LLVMLinker;LLVMMC;LLVMObjCARCOpts;LLVMObject;LLVMPasses;LLVMProfileData;LLVMRemarks;LLVMScalarOpts;LLVMSupport;LLVMTarget;LLVMTransformUtils"
+  INTERFACE_LINK_LIBRARIES "clangAnalysis;clangAST;clangASTMatchers;clangBasic;clangFrontend;clangLex;clangSerialization;LLVMAnalysis;LLVMBitReader;LLVMBitWriter;LLVMCore;LLVMCoroutines;LLVMCoverage;LLVMFrontendOpenMP;LLVMipo;LLVMIRReader;LLVMAggressiveInstCombine;LLVMInstCombine;LLVMInstrumentation;LLVMLTO;LLVMLinker;LLVMMC;LLVMObjCARCOpts;LLVMObject;LLVMPasses;LLVMProfileData;LLVMRemarks;LLVMScalarOpts;LLVMSupport;LLVMTarget;LLVMTransformUtils;Polly"
 )
 
 # Create imported target clangAnalysis
 add_library(clangAnalysis STATIC IMPORTED)
 
 set_target_properties(clangAnalysis PROPERTIES
-  INTERFACE_LINK_LIBRARIES "clangAST;clangASTMatchers;clangBasic;clangLex;LLVMSupport"
+  INTERFACE_LINK_LIBRARIES "clangAST;clangASTMatchers;clangBasic;clangLex;LLVMFrontendOpenMP;LLVMSupport"
 )
 
 # Create imported target clangEdit
@@ -215,14 +215,14 @@ set_target_properties(clangDependencyScanning PROPERTIES
 add_library(clangTransformer STATIC IMPORTED)
 
 set_target_properties(clangTransformer PROPERTIES
-  INTERFACE_LINK_LIBRARIES "clangAST;clangASTMatchers;clangBasic;clangLex;clangToolingCore;clangToolingRefactoring;LLVMSupport"
+  INTERFACE_LINK_LIBRARIES "clangAST;clangASTMatchers;clangBasic;clangLex;clangToolingCore;clangToolingRefactoring;LLVMFrontendOpenMP;LLVMSupport"
 )
 
 # Create imported target clangTooling
 add_library(clangTooling STATIC IMPORTED)
 
 set_target_properties(clangTooling PROPERTIES
-  INTERFACE_LINK_LIBRARIES "clangAST;clangASTMatchers;clangBasic;clangDriver;clangFormat;clangFrontend;clangLex;clangRewrite;clangSerialization;clangToolingCore;LLVMOption;LLVMSupport"
+  INTERFACE_LINK_LIBRARIES "clangAST;clangASTMatchers;clangBasic;clangDriver;clangFormat;clangFrontend;clangLex;clangRewrite;clangSerialization;clangToolingCore;LLVMOption;LLVMFrontendOpenMP;LLVMSupport"
 )
 
 # Create imported target clangDirectoryWatcher
@@ -326,7 +326,7 @@ unset(_IMPORT_CHECK_TARGETS)
 # Make sure the targets which have been exported in some other 
 # export set exist.
 unset(${CMAKE_FIND_PACKAGE_NAME}_NOT_FOUND_MESSAGE_targets)
-foreach(_target "LLVMCore" "LLVMMC" "LLVMSupport" "LLVMFrontendOpenMP" "LLVMMCParser" "LLVMBinaryFormat" "LLVMAnalysis" "LLVMBitReader" "LLVMBitWriter" "LLVMCoroutines" "LLVMCoverage" "LLVMipo" "LLVMIRReader" "LLVMAggressiveInstCombine" "LLVMInstCombine" "LLVMInstrumentation" "LLVMLTO" "LLVMLinker" "LLVMObjCARCOpts" "LLVMObject" "LLVMPasses" "LLVMProfileData" "LLVMRemarks" "LLVMScalarOpts" "LLVMTarget" "LLVMTransformUtils" "LLVMOption" "LLVMBitstreamReader" "LLVMARMCodeGen" "LLVMARMAsmParser" "LLVMARMDesc" "LLVMARMDisassembler" "LLVMARMInfo" "LLVMARMUtils" "LLVMAArch64CodeGen" "LLVMAArch64AsmParser" "LLVMAArch64Desc" "LLVMAArch64Disassembler" "LLVMAArch64Info" "LLVMAArch64Utils" "LLVMX86CodeGen" "LLVMX86AsmParser" "LLVMX86Desc" "LLVMX86Disassembler" "LLVMX86Info" "LLVMX86Utils" "LLVMCodeGen" "LLVMExecutionEngine" "LLVMMCJIT" "LLVMRuntimeDyld" "LLVMSelectionDAG" )
+foreach(_target "LLVMCore" "LLVMMC" "LLVMSupport" "LLVMFrontendOpenMP" "LLVMMCParser" "LLVMBinaryFormat" "LLVMAnalysis" "LLVMBitReader" "LLVMBitWriter" "LLVMCoroutines" "LLVMCoverage" "LLVMipo" "LLVMIRReader" "LLVMAggressiveInstCombine" "LLVMInstCombine" "LLVMInstrumentation" "LLVMLTO" "LLVMLinker" "LLVMObjCARCOpts" "LLVMObject" "LLVMPasses" "LLVMProfileData" "LLVMRemarks" "LLVMScalarOpts" "LLVMTarget" "LLVMTransformUtils" "Polly" "LLVMOption" "LLVMBitstreamReader" "LLVMARMCodeGen" "LLVMARMAsmParser" "LLVMARMDesc" "LLVMARMDisassembler" "LLVMARMInfo" "LLVMARMUtils" "LLVMAArch64CodeGen" "LLVMAArch64AsmParser" "LLVMAArch64Desc" "LLVMAArch64Disassembler" "LLVMAArch64Info" "LLVMAArch64Utils" "LLVMX86CodeGen" "LLVMX86AsmParser" "LLVMX86Desc" "LLVMX86Disassembler" "LLVMX86Info" "LLVMX86Utils" "LLVMCodeGen" "LLVMExecutionEngine" "LLVMMCJIT" "LLVMRuntimeDyld" "LLVMSelectionDAG" )
   if(NOT TARGET "${_target}" )
     set(${CMAKE_FIND_PACKAGE_NAME}_NOT_FOUND_MESSAGE_targets "${${CMAKE_FIND_PACKAGE_NAME}_NOT_FOUND_MESSAGE_targets} ${_target}")
   endif()

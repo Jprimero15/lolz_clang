@@ -96,7 +96,7 @@ set_target_properties(clangASTMatchers PROPERTIES
 add_library(clangCrossTU STATIC IMPORTED)
 
 set_target_properties(clangCrossTU PROPERTIES
-  INTERFACE_LINK_LIBRARIES "clangAST;clangBasic;clangFrontend;clangIndex;LLVMSupport"
+  INTERFACE_LINK_LIBRARIES "clangAST;clangBasic;clangFrontend;clangIndex;clangTooling;clangSerialization;LLVMSupport"
 )
 
 # Create imported target clangSema

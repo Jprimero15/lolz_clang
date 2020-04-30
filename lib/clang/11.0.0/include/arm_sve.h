@@ -1830,6 +1830,7 @@ typedef enum
 #define svmls_lane_f64(...) __builtin_sve_svmls_lane_f64(__VA_ARGS__)
 #define svmls_lane_f32(...) __builtin_sve_svmls_lane_f32(__VA_ARGS__)
 #define svmls_lane_f16(...) __builtin_sve_svmls_lane_f16(__VA_ARGS__)
+#define svmov_b_z(...) __builtin_sve_svmov_b_z(__VA_ARGS__)
 #define svmsb_n_f64_m(...) __builtin_sve_svmsb_n_f64_m(__VA_ARGS__)
 #define svmsb_n_f32_m(...) __builtin_sve_svmsb_n_f32_m(__VA_ARGS__)
 #define svmsb_n_f16_m(...) __builtin_sve_svmsb_n_f16_m(__VA_ARGS__)
@@ -2087,6 +2088,7 @@ typedef enum
 #define svnmsb_f32_z(...) __builtin_sve_svnmsb_f32_z(__VA_ARGS__)
 #define svnmsb_f16_z(...) __builtin_sve_svnmsb_f16_z(__VA_ARGS__)
 #define svnor_b_z(...) __builtin_sve_svnor_b_z(__VA_ARGS__)
+#define svnot_b_z(...) __builtin_sve_svnot_b_z(__VA_ARGS__)
 #define svnot_u8_m(...) __builtin_sve_svnot_u8_m(__VA_ARGS__)
 #define svnot_u32_m(...) __builtin_sve_svnot_u32_m(__VA_ARGS__)
 #define svnot_u64_m(...) __builtin_sve_svnot_u64_m(__VA_ARGS__)
@@ -2168,12 +2170,44 @@ typedef enum
 #define svpnext_b64(...) __builtin_sve_svpnext_b64(__VA_ARGS__)
 #define svpnext_b16(...) __builtin_sve_svpnext_b16(__VA_ARGS__)
 #define svprfb(...) __builtin_sve_svprfb(__VA_ARGS__)
+#define svprfb_gather_u32base(...) __builtin_sve_svprfb_gather_u32base(__VA_ARGS__)
+#define svprfb_gather_u64base(...) __builtin_sve_svprfb_gather_u64base(__VA_ARGS__)
+#define svprfb_gather_u32base_offset(...) __builtin_sve_svprfb_gather_u32base_offset(__VA_ARGS__)
+#define svprfb_gather_u64base_offset(...) __builtin_sve_svprfb_gather_u64base_offset(__VA_ARGS__)
+#define svprfb_gather_s32offset(...) __builtin_sve_svprfb_gather_s32offset(__VA_ARGS__)
+#define svprfb_gather_u32offset(...) __builtin_sve_svprfb_gather_u32offset(__VA_ARGS__)
+#define svprfb_gather_s64offset(...) __builtin_sve_svprfb_gather_s64offset(__VA_ARGS__)
+#define svprfb_gather_u64offset(...) __builtin_sve_svprfb_gather_u64offset(__VA_ARGS__)
 #define svprfb_vnum(...) __builtin_sve_svprfb_vnum(__VA_ARGS__)
 #define svprfd(...) __builtin_sve_svprfd(__VA_ARGS__)
+#define svprfd_gather_u32base(...) __builtin_sve_svprfd_gather_u32base(__VA_ARGS__)
+#define svprfd_gather_u64base(...) __builtin_sve_svprfd_gather_u64base(__VA_ARGS__)
+#define svprfd_gather_u32base_index(...) __builtin_sve_svprfd_gather_u32base_index(__VA_ARGS__)
+#define svprfd_gather_u64base_index(...) __builtin_sve_svprfd_gather_u64base_index(__VA_ARGS__)
+#define svprfd_gather_s32index(...) __builtin_sve_svprfd_gather_s32index(__VA_ARGS__)
+#define svprfd_gather_u32index(...) __builtin_sve_svprfd_gather_u32index(__VA_ARGS__)
+#define svprfd_gather_s64index(...) __builtin_sve_svprfd_gather_s64index(__VA_ARGS__)
+#define svprfd_gather_u64index(...) __builtin_sve_svprfd_gather_u64index(__VA_ARGS__)
 #define svprfd_vnum(...) __builtin_sve_svprfd_vnum(__VA_ARGS__)
 #define svprfh(...) __builtin_sve_svprfh(__VA_ARGS__)
+#define svprfh_gather_u32base(...) __builtin_sve_svprfh_gather_u32base(__VA_ARGS__)
+#define svprfh_gather_u64base(...) __builtin_sve_svprfh_gather_u64base(__VA_ARGS__)
+#define svprfh_gather_u32base_index(...) __builtin_sve_svprfh_gather_u32base_index(__VA_ARGS__)
+#define svprfh_gather_u64base_index(...) __builtin_sve_svprfh_gather_u64base_index(__VA_ARGS__)
+#define svprfh_gather_s32index(...) __builtin_sve_svprfh_gather_s32index(__VA_ARGS__)
+#define svprfh_gather_u32index(...) __builtin_sve_svprfh_gather_u32index(__VA_ARGS__)
+#define svprfh_gather_s64index(...) __builtin_sve_svprfh_gather_s64index(__VA_ARGS__)
+#define svprfh_gather_u64index(...) __builtin_sve_svprfh_gather_u64index(__VA_ARGS__)
 #define svprfh_vnum(...) __builtin_sve_svprfh_vnum(__VA_ARGS__)
 #define svprfw(...) __builtin_sve_svprfw(__VA_ARGS__)
+#define svprfw_gather_u32base(...) __builtin_sve_svprfw_gather_u32base(__VA_ARGS__)
+#define svprfw_gather_u64base(...) __builtin_sve_svprfw_gather_u64base(__VA_ARGS__)
+#define svprfw_gather_u32base_index(...) __builtin_sve_svprfw_gather_u32base_index(__VA_ARGS__)
+#define svprfw_gather_u64base_index(...) __builtin_sve_svprfw_gather_u64base_index(__VA_ARGS__)
+#define svprfw_gather_s32index(...) __builtin_sve_svprfw_gather_s32index(__VA_ARGS__)
+#define svprfw_gather_u32index(...) __builtin_sve_svprfw_gather_u32index(__VA_ARGS__)
+#define svprfw_gather_s64index(...) __builtin_sve_svprfw_gather_s64index(__VA_ARGS__)
+#define svprfw_gather_u64index(...) __builtin_sve_svprfw_gather_u64index(__VA_ARGS__)
 #define svprfw_vnum(...) __builtin_sve_svprfw_vnum(__VA_ARGS__)
 #define svptest_any(...) __builtin_sve_svptest_any(__VA_ARGS__)
 #define svptest_first(...) __builtin_sve_svptest_first(__VA_ARGS__)
@@ -5980,6 +6014,8 @@ __aio __attribute__((__clang_arm_builtin_alias(__builtin_sve_svmls_lane_f32)))
 svfloat32_t svmls_lane(svfloat32_t, svfloat32_t, svfloat32_t, uint64_t);
 __aio __attribute__((__clang_arm_builtin_alias(__builtin_sve_svmls_lane_f16)))
 svfloat16_t svmls_lane(svfloat16_t, svfloat16_t, svfloat16_t, uint64_t);
+__aio __attribute__((__clang_arm_builtin_alias(__builtin_sve_svmov_b_z)))
+svbool_t svmov_z(svbool_t, svbool_t);
 __aio __attribute__((__clang_arm_builtin_alias(__builtin_sve_svmsb_n_f64_m)))
 svfloat64_t svmsb_m(svbool_t, svfloat64_t, svfloat64_t, float64_t);
 __aio __attribute__((__clang_arm_builtin_alias(__builtin_sve_svmsb_n_f32_m)))
@@ -6494,6 +6530,8 @@ __aio __attribute__((__clang_arm_builtin_alias(__builtin_sve_svnmsb_f16_z)))
 svfloat16_t svnmsb_z(svbool_t, svfloat16_t, svfloat16_t, svfloat16_t);
 __aio __attribute__((__clang_arm_builtin_alias(__builtin_sve_svnor_b_z)))
 svbool_t svnor_z(svbool_t, svbool_t, svbool_t);
+__aio __attribute__((__clang_arm_builtin_alias(__builtin_sve_svnot_b_z)))
+svbool_t svnot_z(svbool_t, svbool_t);
 __aio __attribute__((__clang_arm_builtin_alias(__builtin_sve_svnot_u8_m)))
 svuint8_t svnot_m(svuint8_t, svbool_t, svuint8_t);
 __aio __attribute__((__clang_arm_builtin_alias(__builtin_sve_svnot_u32_m)))
@@ -6645,6 +6683,70 @@ svint16_t svorr_z(svbool_t, svint16_t, svint16_t);
 #define svpfalse(...) __builtin_sve_svpfalse_b(__VA_ARGS__)
 __aio __attribute__((__clang_arm_builtin_alias(__builtin_sve_svpfirst_b)))
 svbool_t svpfirst(svbool_t, svbool_t);
+__aio __attribute__((__clang_arm_builtin_alias(__builtin_sve_svprfb_gather_u32base)))
+void svprfb_gather(svbool_t, svuint32_t, sv_prfop);
+__aio __attribute__((__clang_arm_builtin_alias(__builtin_sve_svprfb_gather_u64base)))
+void svprfb_gather(svbool_t, svuint64_t, sv_prfop);
+__aio __attribute__((__clang_arm_builtin_alias(__builtin_sve_svprfb_gather_u32base_offset)))
+void svprfb_gather_offset(svbool_t, svuint32_t, int64_t, sv_prfop);
+__aio __attribute__((__clang_arm_builtin_alias(__builtin_sve_svprfb_gather_u64base_offset)))
+void svprfb_gather_offset(svbool_t, svuint64_t, int64_t, sv_prfop);
+__aio __attribute__((__clang_arm_builtin_alias(__builtin_sve_svprfb_gather_s32offset)))
+void svprfb_gather_offset(svbool_t, void const *, svint32_t, sv_prfop);
+__aio __attribute__((__clang_arm_builtin_alias(__builtin_sve_svprfb_gather_u32offset)))
+void svprfb_gather_offset(svbool_t, void const *, svuint32_t, sv_prfop);
+__aio __attribute__((__clang_arm_builtin_alias(__builtin_sve_svprfb_gather_s64offset)))
+void svprfb_gather_offset(svbool_t, void const *, svint64_t, sv_prfop);
+__aio __attribute__((__clang_arm_builtin_alias(__builtin_sve_svprfb_gather_u64offset)))
+void svprfb_gather_offset(svbool_t, void const *, svuint64_t, sv_prfop);
+__aio __attribute__((__clang_arm_builtin_alias(__builtin_sve_svprfd_gather_u32base)))
+void svprfd_gather(svbool_t, svuint32_t, sv_prfop);
+__aio __attribute__((__clang_arm_builtin_alias(__builtin_sve_svprfd_gather_u64base)))
+void svprfd_gather(svbool_t, svuint64_t, sv_prfop);
+__aio __attribute__((__clang_arm_builtin_alias(__builtin_sve_svprfd_gather_u32base_index)))
+void svprfd_gather_index(svbool_t, svuint32_t, int64_t, sv_prfop);
+__aio __attribute__((__clang_arm_builtin_alias(__builtin_sve_svprfd_gather_u64base_index)))
+void svprfd_gather_index(svbool_t, svuint64_t, int64_t, sv_prfop);
+__aio __attribute__((__clang_arm_builtin_alias(__builtin_sve_svprfd_gather_s32index)))
+void svprfd_gather_index(svbool_t, void const *, svint32_t, sv_prfop);
+__aio __attribute__((__clang_arm_builtin_alias(__builtin_sve_svprfd_gather_u32index)))
+void svprfd_gather_index(svbool_t, void const *, svuint32_t, sv_prfop);
+__aio __attribute__((__clang_arm_builtin_alias(__builtin_sve_svprfd_gather_s64index)))
+void svprfd_gather_index(svbool_t, void const *, svint64_t, sv_prfop);
+__aio __attribute__((__clang_arm_builtin_alias(__builtin_sve_svprfd_gather_u64index)))
+void svprfd_gather_index(svbool_t, void const *, svuint64_t, sv_prfop);
+__aio __attribute__((__clang_arm_builtin_alias(__builtin_sve_svprfh_gather_u32base)))
+void svprfh_gather(svbool_t, svuint32_t, sv_prfop);
+__aio __attribute__((__clang_arm_builtin_alias(__builtin_sve_svprfh_gather_u64base)))
+void svprfh_gather(svbool_t, svuint64_t, sv_prfop);
+__aio __attribute__((__clang_arm_builtin_alias(__builtin_sve_svprfh_gather_u32base_index)))
+void svprfh_gather_index(svbool_t, svuint32_t, int64_t, sv_prfop);
+__aio __attribute__((__clang_arm_builtin_alias(__builtin_sve_svprfh_gather_u64base_index)))
+void svprfh_gather_index(svbool_t, svuint64_t, int64_t, sv_prfop);
+__aio __attribute__((__clang_arm_builtin_alias(__builtin_sve_svprfh_gather_s32index)))
+void svprfh_gather_index(svbool_t, void const *, svint32_t, sv_prfop);
+__aio __attribute__((__clang_arm_builtin_alias(__builtin_sve_svprfh_gather_u32index)))
+void svprfh_gather_index(svbool_t, void const *, svuint32_t, sv_prfop);
+__aio __attribute__((__clang_arm_builtin_alias(__builtin_sve_svprfh_gather_s64index)))
+void svprfh_gather_index(svbool_t, void const *, svint64_t, sv_prfop);
+__aio __attribute__((__clang_arm_builtin_alias(__builtin_sve_svprfh_gather_u64index)))
+void svprfh_gather_index(svbool_t, void const *, svuint64_t, sv_prfop);
+__aio __attribute__((__clang_arm_builtin_alias(__builtin_sve_svprfw_gather_u32base)))
+void svprfw_gather(svbool_t, svuint32_t, sv_prfop);
+__aio __attribute__((__clang_arm_builtin_alias(__builtin_sve_svprfw_gather_u64base)))
+void svprfw_gather(svbool_t, svuint64_t, sv_prfop);
+__aio __attribute__((__clang_arm_builtin_alias(__builtin_sve_svprfw_gather_u32base_index)))
+void svprfw_gather_index(svbool_t, svuint32_t, int64_t, sv_prfop);
+__aio __attribute__((__clang_arm_builtin_alias(__builtin_sve_svprfw_gather_u64base_index)))
+void svprfw_gather_index(svbool_t, svuint64_t, int64_t, sv_prfop);
+__aio __attribute__((__clang_arm_builtin_alias(__builtin_sve_svprfw_gather_s32index)))
+void svprfw_gather_index(svbool_t, void const *, svint32_t, sv_prfop);
+__aio __attribute__((__clang_arm_builtin_alias(__builtin_sve_svprfw_gather_u32index)))
+void svprfw_gather_index(svbool_t, void const *, svuint32_t, sv_prfop);
+__aio __attribute__((__clang_arm_builtin_alias(__builtin_sve_svprfw_gather_s64index)))
+void svprfw_gather_index(svbool_t, void const *, svint64_t, sv_prfop);
+__aio __attribute__((__clang_arm_builtin_alias(__builtin_sve_svprfw_gather_u64index)))
+void svprfw_gather_index(svbool_t, void const *, svuint64_t, sv_prfop);
 __aio __attribute__((__clang_arm_builtin_alias(__builtin_sve_svqdecb_n_s32)))
 int32_t svqdecb(int32_t, uint64_t);
 __aio __attribute__((__clang_arm_builtin_alias(__builtin_sve_svqdecb_n_s64)))
